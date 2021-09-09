@@ -14,17 +14,19 @@
          <img src="https://www.boolean.careers/images/misc/logo.png" alt="Logo Boolean">
         </div>
         <div class="newToDo">
-            <input type="text" v-model="newToDo" placeholder="Nuovo Todo">
+            <input type="text" v-model="newToDo" placeholder="Nuovo Todo" @keyUp.enter="addToDo">
             <button @click="addToDo">Aggiungi</button>
         </div>
         <div class="evento">
             <ul class="boxTodo" v-if="toDos.length > 0">
-                <li v-for="(todo, index) in toDos">
-                    {{todo}}
+               
+                <li v-for="(todo, index) in toDos" :class="toDos.colorClass">
+                    <!-- {{todo}} --> {{todo.titolo}}
+                    <button @click="changeColor">TO DO</button>
                     <i class="fas fa-times" @click="removeToDo(index)"></i>
                 </li>
-                
             </ul>
+            <h2 v-else>Non ci sono to do</h2>
         </div>
     </div>
 
