@@ -4,11 +4,22 @@ const app = new Vue(
     {
         el: '#root',
         data: {
+            newToDo: "",
             toDos: [
-                "fare i compiti",
-                "fare la spesa",
-                "fare il letto",
+                "Fare i compiti",
+                "Fare la spesa",
+                "Fare il letto",
             ]
+        },
+        methods: {
+            addToDo() {
+                if(this.newToDo != "") {
+                    this.toDos.push(this.newToDo);
+                    this.newToDo = "";
+                }
+                
+            }
+           
         }
     }
 )
