@@ -3,3 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+.container {
+    width: 70%;
+    height: 100vh;
+    margin: auto;
+}
+.logo {
+    text-align: center;
+    padding: 20px 0;
+}
+.logo img {
+    max-width: 300px;
+}
+.newToDo {
+    text-align: center;
+}
+.boxTodo {
+    background-color: rgb(243, 237, 237);
+}
