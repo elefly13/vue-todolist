@@ -21,7 +21,7 @@
             <ul class="boxTodo" v-if="toDos.length > 0">
                 <li v-for="(todo, index) in toDos">
                     {{todo}}
-                    <i class="fas fa-times"></i>
+                    <i class="fas fa-times" @click="removeToDo(index)"></i>
                 </li>
                 
             </ul>
