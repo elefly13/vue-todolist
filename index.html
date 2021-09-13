@@ -20,9 +20,10 @@
         <div class="evento">
             <ul class="boxTodo" v-if="toDos.length > 0">
                
-                <li v-for="(todo, index) in toDos" :class="toDos.colorClass">
+                <li v-for="(todo, index) in toDos">
+                    <button @click="check(index)" :class="todo.fatto == true ? giaFatto : daFare" ></button>
                     <!-- {{todo}} --> {{todo.titolo}}
-                    <button @click="changeColor">TO DO</button>
+                    
                     <i class="fas fa-times" @click="removeToDo(index)"></i>
                 </li>
             </ul>

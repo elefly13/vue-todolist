@@ -4,6 +4,8 @@ const app = new Vue(
     {
         el: '#root',
         data: {
+            daFare: "red",
+            giaFatto: "green",
             newToDo: "",
             toDos: [
                 // "Fare i compiti",
@@ -12,17 +14,17 @@ const app = new Vue(
                 {
                     titolo: "fare i compiti",
                     fatto: false,
-                    colorClass: ".red"
+                    
                 },
                 {
                     titolo: "fare la spesa",
                     fatto: false,
-                    colorClass: ".red"
+                    
                 },
                 {
                     titolo: "fare il bucato",
                     fatto: false,
-                    colorClass: ".red"
+                    
                 }
             ]
         },
@@ -30,15 +32,16 @@ const app = new Vue(
             addToDo() {  
                 if(this.newToDo != "") {
                     // this.toDos.push(this.newToDo); //Array
-                    this.toDos.push({titolo: this.newToDo}); //Oggetti
+                    this.toDos.push({titolo: this.newToDo, fatto: false}); //Oggetti
                     this.newToDo = "";
                 }
             },
+            // funzione per rimuovere dalla lista la riga 
             removeToDo(index) {
                 this.toDos.splice(index,1);
             },
-            changeColor() {
-                (this.toDos.fatto == false) ? this.toDos.colorClass = ".green" : this.toDos.colorClass = ".red";
+            check(index) {
+                this.toDos[index].fatto = !this.toDos[index].fatto;
             },
         }
     }
